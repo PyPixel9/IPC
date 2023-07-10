@@ -1,0 +1,7 @@
+FIFO is a method for IPC which does inter process communication using system calls which ensures synchronization and external methods are hence not needed, we use MKFIFO to create shared memory. 
+Read and write cannot work mutually exclusively and hence we need for both of them to be implementing together and then instantaneous IPC is done. I send 5 string at a time to the other program which tracks that 5 strings have been received then iterates through the string and finds the highest ID from the array and returns it back to the other program which then reads it and then continues sending future strings until 50. For execution exec has been used to begin the execution from the makefile. 
+the permission given is 0777 which is read write and execute since the created memory needs to be written , read and executed as well by both the programs
+O_RDONLY: 
+permission with the file descriptor is read only  
+O_WRONLY: 
+permission with the file descriptor is write only  

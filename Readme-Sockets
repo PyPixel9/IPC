@@ -1,0 +1,8 @@
+Socket is made in the tmp directory 
+server creates the socket and then firat unlinks it in order to remove any current sockets by the same name and binds it later on. Then it invokes listen() syscall, later on it uses accept() syscall which will wait for a request from the client in order to establish connection
+The client at the same time follows the similar requests and sends a connection() syscall request to the server. This is a syscall based IPC and hence takes care of synchronization by itself. 
+The strings are send character by character to the other file which then reads it and takes benefit of the fact of fixed size of strings ,it reads them and maintains an iterator to know when it needs to be sent back to the other program, this keeps happening until the 50 strings are sent and the highest indexes for chunks of 5 are returned and used.
+since the client waits for a request always hence we have an infinite for loop , with a break statement carried out to go into the outside for loop (since loops are nested) , send the computer result and go back up and wait in the infinite while loop
+
+References:
+Reference for the implementation has been taken from our lecture slides and Beej's guide to Unix IPC(uploaded on google classroom)
